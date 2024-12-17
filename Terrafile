@@ -1,0 +1,3 @@
+eks:
+ source:  "https://github.com/terraform-aws-modules/terraform-aws-eks.git"
+ version: "v20.31.3"
