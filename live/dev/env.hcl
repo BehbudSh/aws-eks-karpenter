@@ -16,7 +16,7 @@ locals {
 
 # Global VPC variables
   vpc = {
-   name = "IDAgent"
+   name = "vpc-dev"
   }
 
 # Global EKS variables
@@ -29,7 +29,7 @@ locals {
    iam_role_name                            = "${local.environment}-${local.general_name}"
    tags                                     = local.common_tags
    cluster_endpoint_public_access           = true
-   cluster_endpoint_public_access_cidrs     = ["37.47.71.111"] # For demo purposes. Replace with your Public IP.
+   cluster_endpoint_public_access_cidrs     = ["yourPublicIp"] # For demo purposes. Replace with your Public IP.
    cluster_addons = {
      coredns = {
        resolve_conflicts = "OVERWRITE"
