@@ -75,7 +75,7 @@
   resource "kubectl_manifest" "karpenter_node_class" {
     depends_on = [helm_release.karpenter]
     yaml_body = <<YAML
-      apiVersion: karpenter.k8s.aws/v1beta1
+      apiVersion: karpenter.k8s.aws/v1
       kind: EC2NodeClass
       metadata:
         name: default
@@ -103,7 +103,7 @@
   resource "kubectl_manifest" "karpenter_node_pool" {
     depends_on = [kubectl_manifest.karpenter_node_class]
     yaml_body = <<YAML
-      apiVersion: karpenter.k8s.aws/v1beta1
+      apiVersion: karpenter.sh/v1
       kind: NodePool
       metadata:
         name: default
